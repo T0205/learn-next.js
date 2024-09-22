@@ -39,7 +39,8 @@ export type LatestInvoice = {
   amount: string;
 };
 
-// The database returns a number for amount, but we later format it to a string with the formatCurrency function
+// 数据库为amount返回一个数字，但稍后我们使用formatCurrency函数将其格式化为字符串
+//  Omit 是 TypeScript 的一个实用工具类型, 从 LatestInvoice 类型中剔除 amount 属性, 并添加一个 amount 属性，其类型为 number。
 export type LatestInvoiceRaw = Omit<LatestInvoice, 'amount'> & {
   amount: number;
 };
